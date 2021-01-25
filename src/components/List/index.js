@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+// Style
+import style from './List.module.scss'
+
+export default function ToDo(props) {
+    const { list, onChangeList } = props;
+    const [ input, setInput ] = useState()
+    const inputItem = (e) => {
+        setInput(e.target.value);
+    }
+
+    const addItem = () => {
+        const newArray = [...list, input]
+        onChangeList(newArray)
+        clearInput()
+    }
+
+    const clearInput = () => {
+        document.getElementById("te").value = ' '
+    }
+
+    const onEnter = (event) => {
+        if (event.key ==='Enter') {
+            addItem()
+            event.preventDefault()
+            clearInput()
+        }
+    }
+
+    const Items = list.map((item) => {
+        return <li key={uuidv4()}>{item}</li>
+    })
+
+    return (
+        <div>
+            <form>
+                <input id="te" type="text" placeholder="Name..." maxLength="50" onChange={inputItem} className={style.input} onKeyPress={onEnter}/>
+                <button type="button" onClick={addItem} className={style.add}>Add item</button>
+            </form>
+            <ul className={style.tasks}>
+                {Items}
+            </ul>
+        </div>
+    )
+}
