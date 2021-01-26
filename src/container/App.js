@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 // Parts
 import ToDo from "../components/List";
 
+
 // Style
 import style from './App.module.scss';
 
@@ -20,7 +21,7 @@ export class App extends Component {
                         <h1>To Do List</h1>
                     </div>
                     <ToDo list={this.state.list} onChangeList={(newItems) => this.setState({list: newItems})}/>
-                    </div>
+                </div>
             </main>
         )
     }

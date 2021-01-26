@@ -16,3 +16,14 @@
 .input, .add {
   border: 2px solid mediumaquamarine;
 }
+.items {
+  margin-left: 17%;
+  font-weight: bold;
+  font-size: large;
+  color: darkslategray;
+  padding-bottom: 1%;
+}
+.clear_button {
+  display: flex;
+  justify-content: center;
+}

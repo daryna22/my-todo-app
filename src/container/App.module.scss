@@ -8,11 +8,11 @@
   margin: 10%;
   font-family: Calibri;
   flex-direction: column;
+  color: darkslategray;
 }
 .name {
   display: flex;
-  margin-left: 40%;
-  align-items: center;
+  justify-content: center;
 }
 .search {
   width: 200px;
